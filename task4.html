@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1 - Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #1e90ff; /* Blue color for "Task 1" */
+        }
+
+        .person-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 50%;
+            margin: 20px 0;
+        }
+
+        .person-table th, .person-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+            border-radius: 10px;
+        }
+
+        .person-table th {
+            background-color: #f0f0f0; /* Light gray for headers */
+        }
+
+        .person-table td {
+            background-color: #e6f7fa; /* Light cyan for data cells */
+        }
+
+        /* Optional: Styling for the table cells to have rounded corners */
+        .person-table tr:first-child th:first-child {
+            border-top-left-radius: 10px;
+        }
+
+        .person-table tr:first-child th:last-child {
+            border-top-right-radius: 10px;
+        }
+
+        .person-table tr:last-child td:first-child {
+            border-bottom-left-radius: 10px;
+        }
+
+        .person-table tr:last-child td:last-child {
+            border-bottom-right-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Task 1</h2>
+    <table class="person-table">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>80</td>
+        </tr>
+    </table>
+</body>
+</html>
