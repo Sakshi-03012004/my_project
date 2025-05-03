@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5 - Form with Validation Errors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        h2 {
+            color: #1e90ff; /* Blue color for "Task 5" */
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group.error input {
+            border-color: red;
+        }
+
+        .form-group .error-icon {
+            position: absolute;
+            right: 10px;
+            top: 35px;
+            width: 16px;
+            height: 16px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            display: none;
+        }
+
+        .form-group.error .error-icon {
+            display: flex;
+        }
+
+        .form-group .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .form-group.error .error-message {
+            display: block;
+        }
+
+        .form-group select {
+            appearance: none;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="black" d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+            background-size: 12px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #d32f2f; /* Red color for the Submit button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background-color: #b71c1c;
+        }
+    </style>
+</head>
+<body>
+    <h2>Task 5</h2>
+    <div class="form-container">
+        <form>
+            <div class="form-group error">
+                <label>Name</label>
+                <input type="text" placeholder="">
+                <div class="error-icon">✖</div>
+                <div class="error-message">Name is required</div>
+            </div>
+            <div class="form-group error">
+                <label>Email</label>
+                <input type="email" placeholder="">
+                <div class="error-icon">✖</div>
+                <div class="error-message">Email is required</div>
+            </div>
+            <div class="form-group error">
+                <label>Password</label>
+                <input type="password" placeholder="">
+                <div class="error-icon">✖</div>
+                <div class="error-message">Password is required</div>
+            </div>
+            <div class="form-group">
+                <label>Hobbies</label>
+                <select>
+                    <option></option>
+                    <option>Hobby 1</option>
+                    <option>Hobby 2</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
