@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1 - Builderz Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        h2 {
+            color: #1e90ff; /* Blue color for "Task 1" */
+            margin: 20px;
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffb300; /* Yellow background */
+            padding: 10px 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .contact-info {
+            background-color: #1a2a44; /* Dark blue background */
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-info p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            background-color: #1a2a44; /* Dark blue background */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-bar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-bar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-bar .quote-btn {
+            background-color: white;
+            color: black;
+            padding: 8px 15px;
+            border: 1px solid #ccc;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .nav-bar .quote-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 400px;
+            background-image: url('https://via.placeholder.com/1200x400?text=Construction+Image');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            color: white;
+            margin: 0;
+        }
+
+        .hero h2 span {
+            color: #ffb300; /* Yellow for "YOUR DREAM" */
+        }
+
+        .hero .quote-btn {
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .hero .quote-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: space-between;
+            background-color: #1a2a44; /* Dark blue background */
+            padding: 20px;
+            color: white;
+        }
+
+        .features .feature {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .features .feature:nth-child(2) {
+            background-color: #ffb300; /* Yellow background for the middle feature */
+        }
+
+        .features .feature img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .features .feature h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .features .feature p {
+            font-size: 14px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Task 1</h2>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Builderz</h1>
+        <div class="contact-info">
+            <p>📅 Opening Hour: Mon - Fri 800 - 1800</p>
+            <p>📞 Call Us +125 456 8756</p>
+            <p>📧 Email Us info@example.com</p>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">SERVICE</a></li>
+            <li><a href="#">TEAM</a></li>
+            <li><a href="#">PROJECT</a></li>
+            <li><a href="#">PAGES</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+        <a href="#" class="quote-btn">GET A QUOTE</a>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div>
+            <h2>FOR <span>YOUR DREAM</span> PROJECT</h2>
+            <a href="#" class="quote-btn">GET A QUOTE</a>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features">
+        <div class="feature">
+            <img src="https://via.placeholder.com/50?text=👷" alt="Expert Worker">
+            <h3>EXPERT WORKER</h3>
+            <p>Lorem ipsum dolor sit amet, elit. Phasus nec pretium ornare velit non</p>
+        </div>
+        <div class="feature">
+            <img src="https://via.placeholder.com/50?text=🏢" alt="Quality Work">
+            <h3>QUALITY WORK</h3>
+            <p>Lorem ipsum dolor sit amet, elit. Phasus nec pretium ornare velit non</p>
+        </div>
+        <div class="feature">
+            <img src="https://via.placeholder.com/50?text=📞" alt="24/7 Support">
+            <h3>24/7 SUPPORT</h3>
+            <p>Lorem ipsum dolor sit amet, elit. Phasus nec pretium ornare velit non</p>
+        </div>
+    </div>
+</body>
+</html>
