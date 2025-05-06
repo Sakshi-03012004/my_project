@@ -1,251 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 4 - Form Layout with Validation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-        }
-
-        h2 {
-            color: #1e90ff; /* Blue color for "Task 4" */
-            margin-bottom: 20px;
-        }
-
-        .form-container {
-            display: flex;
-            gap: 50px;
-        }
-
-        .form-box {
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 20px;
-            width: 300px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-            position: relative;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        .form-group input[type="radio"] {
-            width: auto;
-            margin-right: 5px;
-        }
-
-        .form-group .icon {
-            position: absolute;
-            left: 10px;
-            top: 35px;
-            font-size: 14px;
-        }
-
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group select,
-        .form-group textarea {
-            padding-left: 30px;
-        }
-
-        .form-group .error-icon {
-            position: absolute;
-            right: 10px;
-            top: 35px;
-            color: red;
-            font-size: 14px;
-            display: none;
-        }
-
-        .radio-group {
-            display: flex;
-            gap: 20px;
-        }
-
-        .submit-btn {
-            background-color: #ff9800; /* Orange color for the Send button */
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .submit-btn:hover {
-            background-color: #e68900;
-        }
-
-        /* Error State Styling */
-        .form-box.error .form-group input,
-        .form-box.error .form-group select,
-        .form-box.error .form-group textarea {
-            border-color: red;
-            background-color: #ffe6e6;
-        }
-
-        .form-box.error .form-group .error-icon {
-            display: block;
-        }
-
-        .form-box.error .form-group input::placeholder,
-        .form-box.error .form-group select option:first-child,
-        .form-box.error .form-group textarea::placeholder {
-            color: #666;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .form-group {
+      margin-bottom: 10px;
+    }
+    input, select, textarea {
+      width: 300px;
+      padding: 8px;
+      margin-top: 4px;
+    }
+    .error {
+      border: 1px solid red;
+      background-color: #fdd;
+    }
+    .error-message {
+      color: red;
+      font-size: 0.9em;
+    }
+    .send-button {
+      padding: 10px 15px;
+      background-color: orange;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <h2>Task 4</h2>
-    <div class="form-container">
-        <!-- Normal Form -->
-        <div class="form-box">
-            <form>
-                <div class="form-group">
-                    <label>First Name</label>
-                    <span class="icon">👤</span>
-                    <input type="text" placeholder="First Name">
-                </div>
-                <div class="form-group">
-                    <label>Last Name</label>
-                    <span class="icon">👤</span>
-                    <input type="text" placeholder="Last Name">
-                </div>
-                <div class="form-group">
-                    <label>E-Mail</label>
-                    <span class="icon">✉️</span>
-                    <input type="email" placeholder="E-Mail Address">
-                </div>
-                <div class="form-group">
-                    <label>Phone #</label>
-                    <span class="icon">📞</span>
-                    <input type="text" placeholder="(845)555-1212">
-                </div>
-                <div class="form-group">
-                    <label>Address</label>
-                    <span class="icon">🏠</span>
-                    <input type="text" placeholder="Address">
-                </div>
-                <div class="form-group">
-                    <label>City</label>
-                    <span class="icon">🏠</span>
-                    <input type="text" placeholder="city">
-                </div>
-                <div class="form-group">
-                    <label>State</label>
-                    <span class="icon">📋</span>
-                    <select>
-                        <option>Please select your state</option>
-                        <option>State 1</option>
-                        <option>State 2</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Do you have hosting?</label>
-                    <div class="radio-group">
-                        <label><input type="radio" name="hosting" value="yes"> Yes</label>
-                        <label><input type="radio" name="hosting" value="no"> No</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Project Description</label>
-                    <span class="icon">✍️</span>
-                    <textarea placeholder="Project Description" rows="3"></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send ✈️</button>
-            </form>
-        </div>
 
-        <!-- Error State Form -->
-        <div class="form-box error">
-            <form>
-                <div class="form-group">
-                    <label>First Name</label>
-                    <span class="icon">👤</span>
-                    <input type="text" placeholder="Please supply your first name">
-                    <span class="error-icon">✖</span>
-                </div>
-                <div class="form-group">
-                    <label>Last Name</label>
-                    <span class="icon">👤</span>
-                    <input type="text" placeholder="Please supply your last name">
-                    <span class="error-icon">✖</span>
-                </div>
-                <div class="form-group">
-                    <label>E-Mail</label>
-                    <span class="icon">✉️</span>
-                    <input type="email" placeholder="Please supply your E-Mail address">
-                    <span class="error-icon">✖</span>
-                </div>
-                <div class="form-group">
-                    <label>Phone #</label>
-                    <span class="icon">📞</span>
-                    <input type="text" placeholder="Please supply your phone number">
-                    <span class="error-icon">✖</span>
-                </div>
-                <div class="form-group">
-                    <label>Address</label>
-                    <span class="icon">🏠</span>
-                    <input type="text" placeholder="Please supply your street address">
-                    <span class="error-icon">✖</span>
-                </div>
-                <div class="form-group">
-                    <label>City</label>
-                    <span class="icon">🏠</span>
-                    <input type="text" placeholder="Please supply your city">
-                    <span class="error-icon">✖</span>
-                </div>
-                <div class="form-group">
-                    <label>State</label>
-                    <span class="icon">📋</span>
-                    <select>
-                        <option>Please select your state</option>
-                        <option>State 1</option>
-                        <option>State 2</option>
-                    </select>
-                    <span class="error-icon">✖</span>
-                </div>
-                <div class="form-group">
-                    <label>Do you have hosting?</label>
-                    <div class="radio-group">
-                        <label><input type="radio" name="hosting" value="yes"> Yes</label>
-                        <label><input type="radio" name="hosting" value="no"> No</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Project Description</label>
-                    <span class="icon">✍️</span>
-                    <textarea placeholder="Project Description" rows="3"></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send ✈️</button>
-            </form>
-        </div>
+  <form id="contactForm" onsubmit="return validateForm();">
+    <div class="form-group">
+      <label>First Name</label><br>
+      <input type="text" id="firstName">
+      <div class="error-message" id="firstNameError"></div>
     </div>
+
+    <div class="form-group">
+      <label>Last Name</label><br>
+      <input type="text" id="lastName">
+      <div class="error-message" id="lastNameError"></div>
+    </div>
+
+    <div class="form-group">
+      <label>E-Mail</label><br>
+      <input type="email" id="email">
+      <div class="error-message" id="emailError"></div>
+    </div>
+
+    <div class="form-group">
+      <label>Phone #</label><br>
+      <input type="text" id="phone">
+      <div class="error-message" id="phoneError"></div>
+    </div>
+
+    <div class="form-group">
+      <label>Address</label><br>
+      <input type="text" id="address">
+      <div class="error-message" id="addressError"></div>
+    </div>
+
+    <div class="form-group">
+      <label>City</label><br>
+      <input type="text" id="city">
+      <div class="error-message" id="cityError"></div>
+    </div>
+
+    <div class="form-group">
+      <label>State</label><br>
+      <select id="state">
+        <option value="">Please select your state</option>
+        <option value="NY">New York</option>
+        <option value="CA">California</option>
+        <!-- Add more states as needed -->
+      </select>
+      <div class="error-message" id="stateError"></div>
+    </div>
+
+    <div class="form-group">
+      <label>Do you have hosting?</label><br>
+      <label><input type="radio" name="hosting" value="Yes"> Yes</label>
+      <label><input type="radio" name="hosting" value="No"> No</label>
+    </div>
+
+    <div class="form-group">
+      <label>Project Description</label><br>
+      <textarea id="description" rows="4" cols="30" placeholder="Project Description"></textarea>
+    </div>
+
+    <button type="submit" class="send-button">Send</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      let valid = true;
+
+      function setError(id, message) {
+        const field = document.getElementById(id);
+        const errorDiv = document.getElementById(id + "Error");
+        field.classList.add("error");
+        errorDiv.textContent = message;
+        valid = false;
+      }
+
+      function clearError(id) {
+        const field = document.getElementById(id);
+        const errorDiv = document.getElementById(id + "Error");
+        field.classList.remove("error");
+        errorDiv.textContent = "";
+      }
+
+      const fields = ["firstName", "lastName", "email", "phone", "address", "city", "state"];
+      fields.forEach(id => clearError(id));
+
+      if (document.getElementById("firstName").value.trim() === "")
+        setError("firstName", "Please supply your first name");
+
+      if (document.getElementById("lastName").value.trim() === "")
+        setError("lastName", "Please supply your last name");
+
+      if (document.getElementById("email").value.trim() === "")
+        setError("email", "Please supply your email address");
+
+      if (document.getElementById("phone").value.trim() === "")
+        setError("phone", "Please supply your phone number");
+
+      if (document.getElementById("address").value.trim() === "")
+        setError("address", "Please supply your street address");
+
+      if (document.getElementById("city").value.trim() === "")
+        setError("city", "Please supply your city");
+
+      if (document.getElementById("state").value.trim() === "")
+        setError("state", "Please select your state");
+
+      return valid;
+    }
+  </script>
+
 </body>
 </html>
